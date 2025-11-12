@@ -30,7 +30,7 @@ public class BioskopWithScanner01 {
                     if (baris < 1 || baris > 4 || kolom < 1 || kolom > 2) {
                         System.out.println("Nomor baris/kolom tidak tersedia");
                     } else if (penonton[baris - 1][kolom - 1] != null) {
-                        System.out.println("Kursi sudah ditempati oleh: " + penonton[baris - 1][kolom - 1]);
+                        System.out.println("Kursi sudah ditempati: " + penonton[baris - 1][kolom - 1]);
                     } else {
                         penonton[baris - 1][kolom - 1] = nama;
                         System.out.println("Data penonton berhasil disimpan");
