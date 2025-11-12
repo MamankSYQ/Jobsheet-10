@@ -21,18 +21,19 @@ public class BioskopWithScanner01 {
                 while (true) {
                     System.out.print("Masukkan nama: ");
                     nama = sc.nextLine();
-                    System.out.print("Masukkan baris: ");
+                    System.out.print("Masukkan baris (1-4): ");
                     baris = sc.nextInt();
-                    System.out.print("Masukkan kolom: ");
+                    System.out.print("Masukkan kolom (1-2): ");
                     kolom = sc.nextInt();
                     sc.nextLine();
 
                     if (baris < 1 || baris > 4 || kolom < 1 || kolom > 2) {
-                        System.out.println("Posisi tidak valid! Baris (1–4), Kolom (1–2).");
+                        System.out.println("Nomor baris/kolom tidak tersedia");
                     } else if (penonton[baris - 1][kolom - 1] != null) {
-                        System.out.println("Kursi sudah ditempati!");
+                        System.out.println("Kursi sudah ditempati oleh: " + penonton[baris - 1][kolom - 1]);
                     } else {
                         penonton[baris - 1][kolom - 1] = nama;
+                        System.out.println("Data penonton berhasil disimpan");
                     }
 
                     System.out.print("Input penonton lainnya? (y/n): ");
@@ -43,29 +44,25 @@ public class BioskopWithScanner01 {
                     }
                 }
 
-            } 
-            else if (menu == 2) {
+            } else if (menu == 2) {
                 System.out.println("\n===== DAFTAR PENONTON =====");
                 for (int i = 0; i < penonton.length; i++) {
                     for (int j = 0; j < penonton[i].length; j++) {
                         if (penonton[i][j] == null) {
-                            System.out.print("** Kosong **\t");
-                        } 
-                        else {
+                            System.out.print("[Kosong]\t");
+                        } else {
                             System.out.print(penonton[i][j] + "\t");
                         }
                     }
                     System.out.println();
                 }
 
-            } 
-            else if (menu == 3) {
+            } else if (menu == 3) {
                 System.out.println("Program selesai.");
                 break;
 
-            } 
-            else {
-                System.out.println("Menu tidak valid, Pilih 1-3.");
+            } else {
+                System.out.println("Menu tidak valid, pilih 1-3.");
             }
         }
         sc.close();
